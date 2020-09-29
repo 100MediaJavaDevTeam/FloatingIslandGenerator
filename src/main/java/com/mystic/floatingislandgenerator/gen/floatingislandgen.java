@@ -22,7 +22,7 @@ public class floatingislandgen {
         if (event.isCanceled()) {
             return;
         }
-        int radius = 10;
+        int radius = 11;
         int size = radius / 3;
         if (!event.getWorld().isRemote && event.getEntityPlayer().getHeldItem(event.getHand()).getItem() == Items.STICK) {
             Vec3d pos1 = event.getEntityPlayer().getPositionEyes(0);
@@ -39,10 +39,13 @@ public class floatingislandgen {
                         double squareNoise1 = perlin.getValue(x, y, z) * 12 - 6;
                         double distanceSqt1 = x * x + y * y + z * z + squareNoise1 * squareNoise1;
                         if (distanceSqt1 <= radius * radius) {
-                            if (y < 1) {
+                            if (y <= 1) {
                                 event.getWorld().setBlockState(pos2.add(x, y, z), Blocks.GRASS.getDefaultState());
-                                if (y <= -3) {
-                                    event.getWorld().setBlockState(pos2.add(x, y, z), Blocks.STONE.getDefaultState());
+                                if (y <= 0) {
+                                    event.getWorld().setBlockState(pos2.add(x, y, z), Blocks.DIRT.getDefaultState());
+                                    if (y <= -3) {
+                                        event.getWorld().setBlockState(pos2.add(x, y, z), Blocks.STONE.getDefaultState());
+                                    }
                                 }
                             }
                         }
