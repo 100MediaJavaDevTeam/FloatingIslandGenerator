@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "floatingisland",
+    "name": "Floating Island",
+    "description": "Make floating islands by hold right clicking a stick!",
+    "version": "1.0.0",
+    "mcversion": "1.12.2",
+    "url": "",
+    "updateUrl": "",
+    "authorList": ["Mysticpasta1", "Nosiphus"],
+    "credits": "Thanks for Barteks2x and NotStirred for their help in general :)",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
