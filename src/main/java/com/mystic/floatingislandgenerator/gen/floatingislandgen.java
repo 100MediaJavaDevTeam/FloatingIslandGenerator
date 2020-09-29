@@ -1,14 +1,9 @@
 package com.mystic.floatingislandgenerator.gen;
 
-import akka.io.SelectionHandlerSettings;
-import ibxm.Player;
-import jdk.nashorn.internal.parser.JSONParser;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.gen.NoiseGeneratorPerlin;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
