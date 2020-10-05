@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+
+  "pattern":
+  [
+    " W ",
+    " S ",
+    " S "
+  ],
+
+  "key":
+  {
+    "W":
+    {
+      "item": "minecraft:diamond"
+    },
+
+    "S":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+
+  "result":
+  {
+    "item": "floatingisland:magic_stick",
+    "count": 3
+  }
+}

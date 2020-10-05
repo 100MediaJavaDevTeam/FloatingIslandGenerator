@@ -1,5 +1,6 @@
 package com.mystic.floatingislandgenerator.gen;
 
+import com.mystic.floatingislandgenerator.init.ModItems;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.util.math.BlockPos;
@@ -29,7 +30,7 @@ public class floatingislandgen {
         int randInt = random.nextInt(2);
         Voronoi voronoi = new Voronoi();
         Perlin perlin = new Perlin();
-        if (!event.getWorld().isRemote && event.getEntityPlayer().getHeldItem(event.getHand()).getItem() == Items.STICK) {
+        if (!event.getWorld().isRemote && event.getEntityPlayer().getHeldItem(event.getHand()).getItem() == ModItems.MAGIC_STICK) {
             Vec3d pos1 = event.getEntityPlayer().getPositionEyes(0);
             Vec3d vec3d = event.getEntityPlayer().getLookVec().scale(diameter + radius).add(pos1);
             BlockPos pos2 = new BlockPos(vec3d.x, vec3d.y, vec3d.z);
@@ -49,7 +50,7 @@ public class floatingislandgen {
                                         event.getWorld().setBlockState(pos2.add(x, y, z), Blocks.GRASS.getDefaultState());
                                         if (y <= 0) {
                                             event.getWorld().setBlockState(pos2.add(x, y, z), Blocks.DIRT.getDefaultState());
-                                            if (y <= -3) {
+                                            if (y <= -2) {
                                                 event.getWorld().setBlockState(pos2.add(x, y, z), Blocks.STONE.getDefaultState());
                                             }
                                         }
@@ -92,11 +93,11 @@ public class floatingislandgen {
                                 double noise = perlin.getValue(x, y, z) * 12;
                                 double scaledNoise = (noise / 11) * ((y * 3) / ((x * x) + (z * z)));
                                 if (scaledNoise >= 0.5) {
-                                    if (y >= 1){
-                                    event.getWorld().setBlockState(pos2.add(x, y - 22 , z), Blocks.STONE.getDefaultState());
-                                        if(y >= 20){
+                                    if (y >= 1) {
+                                        event.getWorld().setBlockState(pos2.add(x, y - 22, z), Blocks.STONE.getDefaultState());
+                                        if (y >= 20) {
                                             event.getWorld().setBlockState(pos2.add(x, y - 22, z), Blocks.DIRT.getDefaultState());
-                                            if(y >= 22){
+                                            if (y >= 22) {
                                                 event.getWorld().setBlockState(pos2.add(x, y - 22, z), Blocks.GRASS.getDefaultState());
                                             }
                                         }
@@ -107,8 +108,7 @@ public class floatingislandgen {
                     }
 
                     break;
-
+                }
             }
         }
     }
-}
