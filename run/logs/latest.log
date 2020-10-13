@@ -161,3 +161,16 @@ JCL      - 8cf8a30581 based on jdk8u242-b08), Eclipse OpenJ9
 [14:36:32] [Server thread/WARN] [net.minecraft.server.MinecraftServer]: Can't keep up! Did the system time change, or is the server overloaded? Running 3367ms behind, skipping 67 tick(s)
 [14:36:36] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
 [14:36:36] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'New World'/overworld
+[15:00:44] [Client thread/INFO] [net.minecraft.client.Minecraft]: Stopping!
+[15:00:44] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping server
+[15:00:44] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving players
+[15:00:44] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: Player640 lost connection: Disconnected
+[15:00:44] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player640 left the game
+[15:00:44] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: Stopping singleplayer server as player logged out
+[15:00:44] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worlds
+[15:00:44] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'New World'/overworld
+[15:00:44] [Server thread/INFO] [FML]: Unloading dimension 0
+[15:00:46] [Server thread/INFO] [FML]: Applying holder lookups
+[15:00:46] [Server thread/INFO] [FML]: Holder lookups applied
+[15:00:46] [Client thread/INFO] [net.minecraft.client.audio.SoundManager]: SoundSystem shutting down...
+[15:00:46] [Client thread/WARN] [net.minecraft.client.audio.SoundManager]: Author: Paul Lamb, www.paulscode.com

@@ -4797,3 +4797,67 @@ JCL      - 8cf8a30581 based on jdk8u242-b08), Eclipse OpenJ9
 [14:36:36] [Server thread/INFO] [net.minecraft.server.integrated.IntegratedServer]: Saving and pausing game...
 [14:36:36] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'New World'/overworld
 [14:36:36] [Server thread/DEBUG] [FML]: Gathering id map for writing to world save New World
+[15:00:44] [Client thread/INFO] [net.minecraft.client.Minecraft]: Stopping!
+[15:00:44] [Server thread/TRACE] [FML]: Sending event FMLServerStoppingEvent to mod minecraft
+[15:00:44] [Server thread/TRACE] [FML]: Sent event FMLServerStoppingEvent to mod minecraft
+[15:00:44] [Server thread/DEBUG] [FML]: Bar Step: ServerStopping - Minecraft took 0.002s
+[15:00:44] [Server thread/TRACE] [FML]: Sending event FMLServerStoppingEvent to mod mcp
+[15:00:44] [Server thread/TRACE] [FML]: Sent event FMLServerStoppingEvent to mod mcp
+[15:00:44] [Server thread/DEBUG] [FML]: Bar Step: ServerStopping - Minecraft Coder Pack took 0.003s
+[15:00:44] [Server thread/TRACE] [FML]: Sending event FMLServerStoppingEvent to mod FML
+[15:00:44] [Server thread/TRACE] [FML]: Sent event FMLServerStoppingEvent to mod FML
+[15:00:44] [Server thread/DEBUG] [FML]: Bar Step: ServerStopping - Forge Mod Loader took 0.002s
+[15:00:44] [Server thread/TRACE] [FML]: Sending event FMLServerStoppingEvent to mod forge
+[15:00:44] [Server thread/TRACE] [FML]: Sent event FMLServerStoppingEvent to mod forge
+[15:00:44] [Server thread/DEBUG] [FML]: Bar Step: ServerStopping - Minecraft Forge took 0.002s
+[15:00:44] [Server thread/TRACE] [FML]: Sending event FMLServerStoppingEvent to mod floatingisland
+[15:00:44] [Server thread/TRACE] [FML]: Sent event FMLServerStoppingEvent to mod floatingisland
+[15:00:44] [Server thread/DEBUG] [FML]: Bar Step: ServerStopping - Floating Island took 0.001s
+[15:00:44] [Server thread/DEBUG] [FML]: Bar Finished: ServerStopping took 0.009s
+[15:00:44] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Stopping server
+[15:00:44] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving players
+[15:00:44] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: Player640 lost connection: Disconnected
+[15:00:44] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Player640 left the game
+[15:00:44] [Server thread/INFO] [net.minecraft.network.NetHandlerPlayServer]: Stopping singleplayer server as player logged out
+[15:00:44] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving worlds
+[15:00:44] [Server thread/INFO] [net.minecraft.server.MinecraftServer]: Saving chunks for level 'New World'/overworld
+[15:00:44] [Server thread/DEBUG] [FML]: Gathering id map for writing to world save New World
+[15:00:44] [Server thread/INFO] [FML]: Unloading dimension 0
+[15:00:44] [Server thread/DEBUG] [FML]: Reverting to frozen data state.
+[15:00:44] [Server thread/TRACE] [FML]: Sending event FMLModIdMappingEvent to mod minecraft
+[15:00:44] [Server thread/TRACE] [FML]: Sent event FMLModIdMappingEvent to mod minecraft
+[15:00:44] [Server thread/DEBUG] [FML]: Bar Step: ModIdMapping - Minecraft took 0.001s
+[15:00:44] [Server thread/TRACE] [FML]: Sending event FMLModIdMappingEvent to mod mcp
+[15:00:44] [Server thread/TRACE] [FML]: Sent event FMLModIdMappingEvent to mod mcp
+[15:00:44] [Server thread/DEBUG] [FML]: Bar Step: ModIdMapping - Minecraft Coder Pack took 0.002s
+[15:00:44] [Server thread/TRACE] [FML]: Sending event FMLModIdMappingEvent to mod FML
+[15:00:44] [Server thread/TRACE] [FML]: Sent event FMLModIdMappingEvent to mod FML
+[15:00:44] [Server thread/DEBUG] [FML]: Bar Step: ModIdMapping - Forge Mod Loader took 0.002s
+[15:00:44] [Server thread/TRACE] [FML]: Sending event FMLModIdMappingEvent to mod forge
+[15:00:46] [Server thread/TRACE] [FML]: Sent event FMLModIdMappingEvent to mod forge
+[15:00:46] [Server thread/DEBUG] [FML]: Bar Step: ModIdMapping - Minecraft Forge took 1.847s
+[15:00:46] [Server thread/TRACE] [FML]: Sending event FMLModIdMappingEvent to mod floatingisland
+[15:00:46] [Server thread/TRACE] [FML]: Sent event FMLModIdMappingEvent to mod floatingisland
+[15:00:46] [Server thread/DEBUG] [FML]: Bar Step: ModIdMapping - Floating Island took 0.004s
+[15:00:46] [Server thread/DEBUG] [FML]: Bar Finished: ModIdMapping took 1.856s
+[15:00:46] [Server thread/INFO] [FML]: Applying holder lookups
+[15:00:46] [Server thread/INFO] [FML]: Holder lookups applied
+[15:00:46] [Server thread/DEBUG] [FML]: Frozen state restored.
+[15:00:46] [Server thread/TRACE] [FML]: Sending event FMLServerStoppedEvent to mod minecraft
+[15:00:46] [Server thread/TRACE] [FML]: Sent event FMLServerStoppedEvent to mod minecraft
+[15:00:46] [Server thread/DEBUG] [FML]: Bar Step: ServerStopped - Minecraft took 0.002s
+[15:00:46] [Server thread/TRACE] [FML]: Sending event FMLServerStoppedEvent to mod mcp
+[15:00:46] [Server thread/TRACE] [FML]: Sent event FMLServerStoppedEvent to mod mcp
+[15:00:46] [Server thread/DEBUG] [FML]: Bar Step: ServerStopped - Minecraft Coder Pack took 0.002s
+[15:00:46] [Server thread/TRACE] [FML]: Sending event FMLServerStoppedEvent to mod FML
+[15:00:46] [Server thread/TRACE] [FML]: Sent event FMLServerStoppedEvent to mod FML
+[15:00:46] [Server thread/DEBUG] [FML]: Bar Step: ServerStopped - Forge Mod Loader took 0.002s
+[15:00:46] [Server thread/TRACE] [FML]: Sending event FMLServerStoppedEvent to mod forge
+[15:00:46] [Server thread/TRACE] [FML]: Sent event FMLServerStoppedEvent to mod forge
+[15:00:46] [Server thread/DEBUG] [FML]: Bar Step: ServerStopped - Minecraft Forge took 0.003s
+[15:00:46] [Server thread/TRACE] [FML]: Sending event FMLServerStoppedEvent to mod floatingisland
+[15:00:46] [Server thread/TRACE] [FML]: Sent event FMLServerStoppedEvent to mod floatingisland
+[15:00:46] [Server thread/DEBUG] [FML]: Bar Step: ServerStopped - Floating Island took 0.003s
+[15:00:46] [Server thread/DEBUG] [FML]: Bar Finished: ServerStopped took 0.013s
+[15:00:46] [Client thread/INFO] [net.minecraft.client.audio.SoundManager]: SoundSystem shutting down...
+[15:00:46] [Client thread/WARN] [net.minecraft.client.audio.SoundManager]: Author: Paul Lamb, www.paulscode.com

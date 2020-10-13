@@ -9,7 +9,6 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.spongepowered.noise.module.source.Perlin;
-import org.spongepowered.noise.module.source.Voronoi;
 
 import java.util.Random;
 
@@ -28,7 +27,6 @@ public class floatingislandgen {
         double size = diameter / 3;
         double radius = diameter / 2;
         int randInt = 3/*random.nextInt(4)*/;
-        Voronoi voronoi = new Voronoi();
         Perlin perlin = new Perlin();
         if (!event.getWorld().isRemote && event.getEntityPlayer().getHeldItem(event.getHand()).getItem() == ModItems.MAGIC_STICK) {
             Vec3d pos1 = event.getEntityPlayer().getPositionEyes(0);
@@ -37,13 +35,13 @@ public class floatingislandgen {
 
             switch (randInt) {
                 case 0:
-                    voronoi.setFrequency(0.2);
+                    perlin.setFrequency(0.2);
                     for (double x = -diameter - 2; x <= diameter + 2; x++) {
 
                         for (double y = -diameter - 2; y <= diameter + 2; y++) {
 
                             for (double z = -diameter - 2; z <= diameter + 2; z++) {
-                                double squareNoise1 = voronoi.getValue(x, y, z) * 12 - 6;
+                                double squareNoise1 = perlin.getValue(x, y, z) * 12 - 6;
                                 double distanceSqt1 = x * x + y * y + z * z + squareNoise1 * squareNoise1;
                                 if (distanceSqt1 <= diameter * diameter) {
                                     if (y <= 1) {
@@ -67,7 +65,7 @@ public class floatingislandgen {
                                 for (double w = -diameter - 2; w <= diameter + 2; w++) {
                                     for (double v = -diameter - 2; v <= diameter + 2; v++) {
                                         for (double u = -diameter - 2; u <= diameter + 2; u++) {
-                                            double squareNoise2 = voronoi.getValue(x, y, z) * 12 - 6;
+                                            double squareNoise2 = perlin.getValue(x, y, z) * 12 - 6;
                                             double distanceSqt2 = x * x + y * y + z * z + squareNoise2 * squareNoise2;
                                             if (distanceSqt2 <= diameter * (size + 2)) {
                                                 if (y <= 1 && y >= -1) {
@@ -110,13 +108,13 @@ public class floatingislandgen {
                     break;
                 case 2:
 
-                    voronoi.setFrequency(0.2);
+                    perlin.setFrequency(0.2);
                     for (double x = -radius - 2; x <= radius + 8; x++) {
 
                         for (double y = -diameter - 2; y <= diameter + 8; y++) {
 
                             for (double z = -radius - 2; z <= radius + 8; z++) {
-                                double squareNoise1 = voronoi.getValue(x, y, z) * 12 - 6;
+                                double squareNoise1 = perlin.getValue(x, y, z) * 12 - 6;
                                 double distanceSqt1 = x * x + y * y + z * z + squareNoise1 * squareNoise1;
                                 if (distanceSqt1 <= radius * diameter) {
                                     if (y >= 1) {
@@ -168,13 +166,13 @@ public class floatingislandgen {
                     break;
 
                 case 3:
-                    voronoi.setFrequency(0.2);
+                    perlin.setFrequency(0.2);
                     for (double x = -diameter - 2; x <= diameter + 2; x++) {
 
                         for (double y = -diameter - 2; y <= diameter + 2; y++) {
 
                             for (double z = -diameter - 2; z <= diameter + 2; z++) {
-                                double squareNoise1 = voronoi.getValue(x, y, z) * 12 - 6;
+                                double squareNoise1 = perlin.getValue(x, y, z) * 12 - 6;
                                 double distanceSqt1 = x * x + y * y + z * z + squareNoise1 * squareNoise1;
                                 if (distanceSqt1 <= diameter * diameter) {
                                     if (y <= 1) {
@@ -198,7 +196,7 @@ public class floatingislandgen {
                                 for (double w = -diameter - 2; w <= diameter + 2; w++) {
                                     for (double v = -diameter - 2; v <= diameter + 2; v++) {
                                         for (double u = -diameter - 2; u <= diameter + 2; u++) {
-                                            double squareNoise2 = voronoi.getValue(x, y, z) * 12 - 6;
+                                            double squareNoise2 = perlin.getValue(x, y, z) * 12 - 6;
                                             double distanceSqt2 = x * x + y * y + z * z + squareNoise2 * squareNoise2;
                                             if (distanceSqt2 <= diameter * (size + 2)) {
                                                 if (y <= 1 && y >= -1) {
