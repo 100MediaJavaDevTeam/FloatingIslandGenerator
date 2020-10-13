@@ -10,9 +10,9 @@ import java.io.IOException;
 
 public class FloatingIslandGUI extends GuiScreen {
 
-   ResourceLocation texture = new ResourceLocation(reference.MODID, "textures/gui/islandgui.png");
-   int guiHeight = 217;
-   int guiWidth = 191;
+   public final ResourceLocation texture = new ResourceLocation(reference.MODID, "textures/gui/islandgui.png");
+   public final int guiHeight = 217;
+   public final int guiWidth = 191;
 
     @Override
     public void drawScreen(int mouseX, int mouseY, float partialTicks)
