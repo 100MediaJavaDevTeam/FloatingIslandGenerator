@@ -27,7 +27,7 @@ public class floatingislandgen {
         double diameter = 11;
         double size = diameter / 3;
         double radius = diameter / 2;
-        int randInt = 2/*random.nextInt(3)*/;
+        int randInt = 3/*random.nextInt(4)*/;
         Voronoi voronoi = new Voronoi();
         Perlin perlin = new Perlin();
         if (!event.getWorld().isRemote && event.getEntityPlayer().getHeldItem(event.getHand()).getItem() == ModItems.MAGIC_STICK) {
@@ -164,6 +164,72 @@ public class floatingislandgen {
                                 }
                             }
                         }
+
+                    break;
+
+                case 3:
+                    voronoi.setFrequency(0.2);
+                    for (double x = -diameter - 2; x <= diameter + 2; x++) {
+
+                        for (double y = -diameter - 2; y <= diameter + 2; y++) {
+
+                            for (double z = -diameter - 2; z <= diameter + 2; z++) {
+                                double squareNoise1 = voronoi.getValue(x, y, z) * 12 - 6;
+                                double distanceSqt1 = x * x + y * y + z * z + squareNoise1 * squareNoise1;
+                                if (distanceSqt1 <= diameter * diameter) {
+                                    if (y <= 1) {
+                                        event.getWorld().setBlockState(pos2.add(x, y, z), Blocks.GRASS.getDefaultState());
+                                        if (y <= 0) {
+                                            event.getWorld().setBlockState(pos2.add(x, y, z), Blocks.DIRT.getDefaultState());
+                                            if (y <= -2) {
+                                                event.getWorld().setBlockState(pos2.add(x, y, z), Blocks.STONE.getDefaultState());
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // code for the bottom of the island!!!
+                    for (double x = -size; x <= 0; x++) {
+                        for (double y = -size; y <= 0; y++) {
+                            for (double z = -size; z <= 0; z++) {
+                                for (double w = -diameter - 2; w <= diameter + 2; w++) {
+                                    for (double v = -diameter - 2; v <= diameter + 2; v++) {
+                                        for (double u = -diameter - 2; u <= diameter + 2; u++) {
+                                            double squareNoise2 = voronoi.getValue(x, y, z) * 12 - 6;
+                                            double distanceSqt2 = x * x + y * y + z * z + squareNoise2 * squareNoise2;
+                                            if (distanceSqt2 <= diameter * (size + 2)) {
+                                                if (y <= 1 && y >= -1) {
+                                                    if (x <= 1 && x >= -2) {
+                                                        if (z <= 1 && z >= -2) {
+                                                            event.getWorld().setBlockState(pos2.add(x + 1, y - 9, z + 1), Blocks.STONE.getDefaultState());
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    for (double x = -radius - 2; x <= radius + 2; x++) {
+
+                        for (double y = -size - 2; y <= size + 2; y++) {
+
+                            for (double z = -radius - 2; z <= radius + 2; z++) {
+                                double distanceSqt1 = x * x + y * y + z * z;
+                                if (distanceSqt1 <= radius * radius) {
+                                    if (y <= 2) {
+                                        event.getWorld().setBlockState(pos2.add(x, y, z), Blocks.WATER.getDefaultState());
+                                    }
+                                }
+                            }
+                        }
+                    }
 
                     break;
                 }
