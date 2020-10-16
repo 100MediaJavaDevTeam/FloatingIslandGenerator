@@ -32,7 +32,7 @@ public class floatingislandgen {
         double diameter = 11;
         double size = diameter / 3;
         double radius = diameter / 2;
-        int randInt = 4/*random.nextInt(5)*/;
+        int randInt = 5/*random.nextInt(6)*/;
         final IBlockState DEFAULT_TRUNK = Blocks.LOG.getDefaultState().withProperty(BlockOldLog.VARIANT, BlockPlanks.EnumType.OAK);
         final IBlockState DEFAULT_LEAF = Blocks.LEAVES.getDefaultState().withProperty(BlockOldLeaf.VARIANT, BlockPlanks.EnumType.OAK).withProperty(BlockLeaves.CHECK_DECAY, Boolean.valueOf(false));
         Perlin perlin = new Perlin();
@@ -73,19 +73,13 @@ public class floatingislandgen {
                     for (double x = -size; x <= 0; x++) {
                         for (double y = -size; y <= 0; y++) {
                             for (double z = -size; z <= 0; z++) {
-                                for (double w = -diameter - 2; w <= diameter + 2; w++) {
-                                    for (double v = -diameter - 2; v <= diameter + 2; v++) {
-                                        for (double u = -diameter - 2; u <= diameter + 2; u++) {
-                                            double squareNoise2 = perlin.getValue(x, y, z) * 12 - 6;
-                                            double distanceSqt2 = x * x + y * y + z * z + squareNoise2 * squareNoise2;
-                                            if (distanceSqt2 <= diameter * (size + 2)) {
-                                                if (y <= 1 && y >= -1) {
-                                                    if (x <= 1 && x >= -2) {
-                                                        if (z <= 1 && z >= -2) {
-                                                            event.getWorld().setBlockState(pos2.add(x + 1, y - 9, z + 1), Blocks.STONE.getDefaultState());
-                                                        }
-                                                    }
-                                                }
+                                double squareNoise2 = perlin.getValue(x, y, z) * 12 - 6;
+                                double distanceSqt2 = x * x + y * y + z * z + squareNoise2 * squareNoise2;
+                                if (distanceSqt2 <= diameter * (size + 2)) {
+                                    if (y <= 1 && y >= -1) {
+                                        if (x <= 1 && x >= -2) {
+                                            if (z <= 1 && z >= -2) {
+                                                event.getWorld().setBlockState(pos2.add(x + 1, y - 9, z + 1), Blocks.STONE.getDefaultState());
                                             }
                                         }
                                     }
@@ -277,6 +271,24 @@ public class floatingislandgen {
                     }
 
                         break;
+                case 5:
+                    int missleVar = 10; // this height of the missile and the radius of the surrounding stone :) 10 or less should be default!!!
+                    for (double x = -missleVar; x <= missleVar; x++) {
+                        for (double y = -missleVar; y <= missleVar; y++) {
+                            for (double z = -missleVar; z <= missleVar; z++) {
+                                double noise = perlin.getValue(x, y, z) * 12;
+                                double scaledNoise = (noise / 11) * ((y * 3) / ((((-x * x) + 20) * .5) + (((-z * z) + 20) * .5)));
+                                if (scaledNoise <= 1) {
+                                    if (x <= -7 || x >= 7 || z <= -7 || z >= 7) {
+                                        event.getWorld().setBlockState(pos2.add(x, y, z), Blocks.STONE.getDefaultState());
+                                    }else{
+                                        event.getWorld().setBlockState(pos2.add(x, y, z), Blocks.IRON_BLOCK.getDefaultState());
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    break;
                     }
                 }
             }
