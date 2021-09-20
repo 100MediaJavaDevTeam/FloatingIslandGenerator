@@ -41,7 +41,7 @@ public class floatingislandgen {
             Vec3d vec3d = event.getEntityPlayer().getLookVec().scale(diameter + radius).add(pos1);
             BlockPos pos2 = new BlockPos(vec3d.x, vec3d.y, vec3d.z);
 
-            switch (randInt) {
+            switch (1) {
                 case 0:
                     perlin.setFrequency(0.2);
                     for (double x = -diameter - 2; x <= diameter + 2; x++) {
